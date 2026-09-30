@@ -1,0 +1,17 @@
+.form-trap{position:absolute!important;left:-10000px;width:1px;height:1px;overflow:hidden}
+.brief-form .form-notice{font-size:12px;line-height:1.7;color:#68715f;margin-top:20px}
+.brief-form .submit-status{font-size:14px;line-height:1.7;margin-top:16px;overflow-wrap:anywhere}
+.submit-status:empty{display:none}
+.submit-status[data-state="error"]{color:#a92e24}
+.submit-status[data-state="success"]{color:#386320}
+.brief-form button:disabled{cursor:default;opacity:.65;transform:none}
+.brief-form input:disabled,.brief-form select:disabled{background:#f2f4ed;color:#66705f;opacity:1}
+.intake-success{margin-top:20px;padding:28px;background:#f3f8e8;border:1px solid #bdcea5;border-radius:8px}
+.intake-success:focus{outline:2px solid #668a26;outline-offset:4px}
+.success-check{display:flex;width:36px;height:36px;border-radius:50%;align-items:center;justify-content:center;background:#dfff72;color:#203615;font-size:23px;margin-bottom:17px}
+.intake-success h3{font-size:22px;line-height:1.4;letter-spacing:-.7px}
+.intake-success p{font-size:15px;line-height:1.8;margin-top:13px;overflow-wrap:anywhere}
+.intake-success .receipt-number{font-size:12px;color:#67705d}
+.receipt-number span{display:block;font-variant-numeric:tabular-nums}
+.intake-success .button{margin-top:22px;font-size:14px;width:100%}
+@media(max-width:760px){.intake-success{padding:22px}.intake-success h3{font-size:20px}}

@@ -10,7 +10,8 @@
   <title>링크프롬 — 파트너사 캠페인 제안</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141716'/%3E%3Cpath d='M15 21h22v17H15zM28 30h22v17H28z' fill='none' stroke='%23dfff72' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="partner.css?v=20260930-2">
-  <script src="partner.js?v=20260930-2" defer></script>
+  <link rel="stylesheet" href="intake.css?v=20260930-1">
+  <script src="partner.js?v=20260930-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -109,8 +110,35 @@
       <details><summary>첫 캠페인을 위해 무엇을 준비하면 되나요?<span aria-hidden="true">+</span></summary><p>상품을 확인할 수 있는 링크와 원하는 목표를 알려주세요. 예산과 일정이 정해졌다면 함께 전달해 주시면 됩니다. 채널과 기획, 성과 측정 범위는 이후 함께 구체화합니다.</p></details>
     </div></section>
 
-    <section id="contact" class="contact section" aria-labelledby="contact-title"><div class="wrap contact-layout"><div class="contact-copy"><p class="eyebrow">우리 상품의 첫 캠페인</p><h2 id="contact-title">상품을 보여주세요.<br>첫 집행안으로<br>답하겠습니다.</h2><p>상품 링크와 원하는 목표부터 알려주세요.<br>제안받으신 메시지로 회신해 주시면 됩니다.</p><div class="contact-promise"><span aria-hidden="true">↗</span><p>추천 채널과 이유 · 콘텐츠 기획 방향<br>집행비·성과 수수료안까지 함께 제안합니다.</p></div></div>
-      <form id="brief-form" class="brief-form"><h3>우리 상품의 집행안 요청</h3><p class="form-intro">작성 후 문구를 복사해 메시지로 보내주세요.</p><label for="company">업체명 <span>필수</span></label><input id="company" name="company" autocomplete="organization" placeholder="업체명 또는 브랜드명" maxlength="120" required><label for="product">상품·서비스 링크 <span>필수</span></label><input id="product" name="product" type="text" inputmode="url" placeholder="홈페이지 또는 상품 소개 링크" maxlength="1000" required><label for="goal">이번 캠페인의 목표</label><select id="goal" name="goal"><option value="상담 문의 확보">상담 문의 확보</option><option value="설명회·강의 신청">설명회·강의 신청</option><option value="구독 가입">구독 가입</option><option value="상품 구매">상품 구매</option><option value="논의 후 결정">논의 후 결정</option></select><label for="budget">희망 예산·일정 <span>선택</span></label><input id="budget" name="budget" placeholder="정해진 범위가 있다면 알려주세요" maxlength="200"><button class="button button-dark" type="submit">요청 문구 만들기 <span aria-hidden="true">↗</span></button><div id="brief-result" class="brief-result" hidden><label for="brief-text">보낼 문의 내용</label><textarea id="brief-text" rows="9" readonly></textarea><button id="copy-brief" class="button button-outline" type="button">문의 문구 복사하기</button><p id="copy-status" role="status">복사한 내용을 제안받으신 메시지로 보내주세요.</p></div></form>
+    <section id="contact" class="contact section" aria-labelledby="contact-title"><div class="wrap contact-layout"><div class="contact-copy"><p class="eyebrow">우리 상품의 첫 캠페인</p><h2 id="contact-title">상품을 보여주세요.<br>첫 집행안으로<br>답하겠습니다.</h2><p>상품 링크와 원하는 목표부터 알려주세요.<br>내용을 검토한 뒤 입력하신 이메일로 연락드릴게요.</p><div class="contact-promise"><span aria-hidden="true">↗</span><p>추천 채널과 이유 · 콘텐츠 기획 방향<br>집행비·성과 수수료안까지 함께 제안합니다.</p></div></div>
+      <div>
+      <form id="brief-form" class="brief-form" data-endpoint="https://script.google.com/macros/s/AKfycbwEkhhTldZO98JN0pjny1FzG2bN0RCQZUxUMnqiDZfvOWnt28pWShnrjSolpKBnBd6p3Q/exec">
+        <h3>우리 상품의 집행안 요청</h3>
+        <p class="form-intro">아래 내용을 보내주시면 상품에 맞는 첫 집행안을 제안합니다.</p>
+        <label for="company">업체명 <span>필수</span></label>
+        <input id="company" name="company" autocomplete="organization" placeholder="업체명 또는 브랜드명" maxlength="120" required>
+        <label for="email">회신 받을 이메일 <span>필수</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="제안서를 받을 업무용 이메일" maxlength="254" required>
+        <label for="product">상품·서비스 링크 <span>필수</span></label>
+        <input id="product" name="product" type="text" inputmode="url" placeholder="홈페이지 또는 상품 소개 링크" maxlength="1000" required>
+        <label for="goal">이번 캠페인의 목표</label>
+        <select id="goal" name="goal"><option>상담 문의 확보</option><option>설명회·강의 신청</option><option>구독 가입</option><option>상품 구매</option><option>논의 후 결정</option></select>
+        <label for="budget">희망 예산·일정 <span>선택</span></label>
+        <input id="budget" name="budget" placeholder="정해진 범위가 있다면 알려주세요" maxlength="200">
+        <div class="form-trap" aria-hidden="true"><label for="website">이 항목은 비워 두세요</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="form-notice">입력하신 정보는 집행안 검토와 회신을 위해 링크프롬에 전달됩니다.</p>
+        <button id="submit-brief" class="button button-dark" type="submit">집행안 요청하기 <span aria-hidden="true">↗</span></button>
+        <p id="submit-status" class="submit-status" role="status" aria-live="polite"></p>
+        <noscript><p>온라인 접수를 위해 브라우저의 JavaScript를 켜주세요.</p></noscript>
+      </form>
+      <div id="brief-result" class="brief-result intake-success" hidden tabindex="-1">
+        <span class="success-check" aria-hidden="true">✓</span>
+        <h3>요청이 잘 도착했습니다.</h3>
+        <p>상품과 목표를 검토한 뒤<br><strong id="receipt-email"></strong>으로 연락드릴게요.</p>
+        <p class="receipt-number">접수 번호 <span id="receipt-id"></span></p>
+        <button id="new-request" class="button button-outline" type="button">다른 상품도 문의하기</button>
+      </div>
+      </div>
     </div></section>
   </main>
   <footer class="site-footer"><div class="wrap"><a href="#" class="brand" aria-label="링크프롬 처음으로"><img src="../assets/linkfrom-logo-ko-light.png" width="2172" height="724" alt="링크프롬"></a><p>부동산·강의 고객 유입 마케팅<br>최종 집행 범위와 비용은 별도 협의 및 계약으로 확정합니다.</p><span>링크프롬 · 파트너사 제안</span></div></footer>
