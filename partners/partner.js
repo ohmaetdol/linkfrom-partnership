@@ -15,14 +15,14 @@ form.addEventListener('submit', event => {
   }
   const budget = form.elements.budget.value.trim();
   output.value = [
-    '안녕하세요. 링크프롬 파트너사 캠페인에 관심이 있습니다.',
+    '안녕하세요. 우리 상품에 맞는 첫 캠페인 집행안을 요청드립니다.',
     '',
     `업체명: ${company}`,
     `상품·서비스 링크: ${product}`,
     `캠페인 목표: ${form.elements.goal.value}`,
     `희망 예산·일정: ${budget || '협의 희망'}`,
     '',
-    '우리 상품에 맞는 채널과 진행 방식, 채널 집행비 및 성과 수수료 조건을 안내받고 싶습니다.'
+    '추천 채널과 선정 이유, 콘텐츠 기획 방향, 집행비·성과 수수료안을 함께 제안받고 싶습니다.'
   ].join('\n');
   result.hidden = false;
   status.textContent = '아직 전송되지 않았습니다. 문구를 복사해 제안받으신 메시지로 보내주세요.';
