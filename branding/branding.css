@@ -25,8 +25,8 @@
 /* Real Higgsfield portrait films. Depth comes from the footage itself. */
 .people-stage{--film-progress:0%;min-width:0;align-self:center}
 .people-cinema{position:relative;width:min(100%,360px);aspect-ratio:3/4;height:auto;margin:18px auto 0;overflow:hidden;background:#f4eee8;border-radius:180px 180px 8px 8px;isolation:isolate}
-.people-cinema video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;background:#fffdfb;opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s;pointer-events:none}
-.people-cinema video[data-active="true"]{opacity:1;visibility:visible;z-index:1}
+.people-cinema video,.people-cinema .person-still{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;background:#fffdfb;opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s;pointer-events:none}
+.people-cinema video[data-active="true"],.people-cinema .person-still[data-active="true"]{opacity:1;visibility:visible;z-index:1}
 .film-badge{position:absolute;top:22px;left:50%;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:6px;font-size:9px;font-weight:650;letter-spacing:1.7px;color:#5f5650;white-space:nowrap;background:#fff8e7c2;padding:6px 11px;border:1px solid #fff8ed;border-radius:20px}
 .film-badge i{width:5px;height:5px;border-radius:50%;background:var(--accent)}
 .film-progress{height:2px;background:var(--line);margin-top:13px;overflow:hidden}
@@ -146,7 +146,7 @@
 .hero-channel-strip a{display:flex;align-items:center;gap:8px;min-width:125px}
 .hero-channel-strip img{width:29px;height:29px;object-fit:cover;border-radius:50%;flex-shrink:0}
 .hero-channel-strip b{display:block;font-size:10px;font-weight:650;letter-spacing:-.25px}.hero-channel-strip small{display:block;color:var(--muted);font-size:9px;margin-top:1px}.hero-channel-strip a:hover b{color:var(--accent)}
-.work-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 28px}
 .work-grid .channel-id{gap:9px;min-width:0}.work-grid .channel-id img{width:36px;height:36px;flex-shrink:0}.work-grid .channel-id h3{font-size:17px}.work-grid .channel-id span{font-size:9px}.work-grid .work-copy h4{font-size:24px}.work-grid .work-copy>p:last-child{font-size:14px}
 .channel-topics{display:flex;flex-wrap:wrap;gap:7px;padding-top:16px;border-top:1px solid var(--line)}.channel-topics span{font-size:11px;padding:6px 10px;border-radius:25px;background:#fff0e5;color:#8d512e}
 @media(max-width:1000px) and (min-width:701px){.work-grid{gap:16px}.work-grid .channel-id{gap:7px}.work-grid .channel-id h3{font-size:15px}.work-grid .channel-id img{width:28px;height:28px}.work-grid .round-link{width:26px;height:26px;font-size:17px}.work-grid .work-top{gap:7px}.work-grid .work-copy h4{font-size:21px}.work-grid .work-copy>p:last-child{font-size:13px}.work-grid .channel-id span{font-size:8px}.work-grid .mini-videos{gap:9px}.work-grid .mini-videos span{font-size:9px}}
@@ -160,3 +160,8 @@
 .person-tabs button{flex:0 0 calc((100% - 14px)/3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:5px;padding:8px 4px;min-height:91px}
 .person-tabs button img{width:30px;height:39px;margin:0}
 .person-tabs button span{font-size:9px;line-height:1.4}.person-tabs small{font-size:8px;margin-bottom:2px}
+
+/* A video-view case is distinct from the channel subscriber counts. */
+.hero-channel-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.case-view-count{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;padding:18px 20px;background:#fff0e5;border-radius:8px}
+.case-view-count>div{display:flex;align-items:center;gap:15px}.case-view-count strong{font-size:42px;line-height:1.1;letter-spacing:-1.6px;color:#bc4010}.case-view-count strong span{font-size:18px;letter-spacing:-.4px;margin-left:3px}.case-view-count>div>span{font-size:11px;color:#7f563e}.case-view-count small{font-size:9px;color:#8d7668}

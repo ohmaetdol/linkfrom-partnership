@@ -1,7 +1,8 @@
 'use strict';
 
 const stage = document.querySelector('.people-stage');
-const videos = [...document.querySelectorAll('[data-person-video]')];
+const slides = [...document.querySelectorAll('[data-person-slide]')];
+const videos = slides.filter(slide => slide.tagName === 'VIDEO');
 const tabs = [...document.querySelectorAll('[data-select-person]')];
 const toggle = document.getElementById('carousel-toggle');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -9,6 +10,7 @@ const people = [
   { name: '사장찍어주는남자', role: '직접 운영 채널', audience: '유튜브 14만' },
   { name: '오은환의하이라이트', role: '함께한 채널', audience: '유튜브 14만' },
   { name: '홍아린 AI', role: '함께한 채널', audience: '유튜브 약 8만' },
+  { name: '김고딩', role: '184만 조회수 영상의 주인공 · 사찍남 출연', audience: '출연 영상 184만 조회수' },
   { name: '다음은, 당신의 채널입니다.', role: '새로운 주인공을 기다립니다', audience: 'NEXT CREATOR' },
   { name: '당신의 이야기를 기다립니다.', role: '새로운 주인공을 기다립니다', audience: 'NEXT CREATOR' }
 ];
@@ -16,6 +18,7 @@ let active = 0;
 let paused = reducedMotion.matches;
 let visible = true;
 let playAttempt = 0;
+let stillTimer;
 
 function updateControls() {
   toggle.textContent = paused ? '영상 재생 ▷' : '영상 멈춤 Ⅱ';
@@ -25,11 +28,16 @@ function updateControls() {
 
 function syncPlayback() {
   const attempt = ++playAttempt;
-  videos.forEach((video, index) => { if (index !== active) video.pause(); });
+  clearTimeout(stillTimer);
+  videos.forEach(video => { if (video !== slides[active]) video.pause(); });
   updateControls();
-  const video = videos[active];
+  const video = slides[active];
   if (paused || !visible || document.hidden) {
-    video.pause();
+    if (video.tagName === 'VIDEO') video.pause();
+    return;
+  }
+  if (video.tagName !== 'VIDEO') {
+    stillTimer = setTimeout(() => selectPerson((active + 1) % people.length), 5000);
     return;
   }
   if (video.ended) video.currentTime = 0;
@@ -43,10 +51,10 @@ function syncPlayback() {
 
 function selectPerson(index) {
   active = index;
-  videos.forEach((video, i) => {
+  slides.forEach((video, i) => {
     video.dataset.active = String(i === index);
     video.setAttribute('aria-hidden', String(i !== index));
-    if (i === index) video.currentTime = 0;
+    if (i === index && video.tagName === 'VIDEO') video.currentTime = 0;
   });
   tabs.forEach((tab, i) => tab.setAttribute('aria-pressed', String(i === index)));
   document.getElementById('person-name').textContent = people[index].name;
@@ -58,7 +66,8 @@ function selectPerson(index) {
   syncPlayback();
 }
 
-videos.forEach((video, index) => {
+videos.forEach(video => {
+  const index = slides.indexOf(video);
   video.muted = true;
   video.playbackRate = 1.2;
   video.addEventListener('ended', () => {
