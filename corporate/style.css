@@ -24,3 +24,5 @@ header{position:sticky;top:0;z-index:10;background:#fafaf7ed;backdrop-filter:blu
 .price-scope-link{display:block;text-align:center;font-size:13px;color:#dce8d5;padding:18px 8px 0}.price-scope-link:hover{text-decoration:underline}
 
 @media(min-width:1101px){.curriculum-grid{grid-template-columns:repeat(3,1fr)}}
+
+.pricing-options{display:block}.price-heading{margin-bottom:35px}.price-options{display:grid;grid-template-columns:1fr 1fr;gap:24px}.price-options h3{font-size:23px;margin:18px 0}.price-options .amount{font-size:64px}@media(max-width:760px){.price-options{grid-template-columns:1fr}.price-options .amount{font-size:56px}}
