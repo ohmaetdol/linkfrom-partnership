@@ -26,3 +26,5 @@ header{position:sticky;top:0;z-index:10;background:#fafaf7ed;backdrop-filter:blu
 @media(min-width:1101px){.curriculum-grid{grid-template-columns:repeat(3,1fr)}}
 
 .pricing-options{display:block}.price-heading{margin-bottom:35px}.price-options{display:grid;grid-template-columns:1fr 1fr;gap:24px}.price-options h3{font-size:23px;margin:18px 0}.price-options .amount{font-size:64px}@media(max-width:760px){.price-options{grid-template-columns:1fr}.price-options .amount{font-size:56px}}
+
+.price-box.recommended{border:2px solid #c7ee96;background:#385345;box-shadow:0 16px 40px #0002}.recommend-badge{display:block;background:#c7ee96;color:#203738;border-radius:6px;padding:10px 12px;font-size:12px;font-weight:800;margin-bottom:20px}.recommend-reason{color:#e3eddd}.recommend-reason strong{color:#c7ee96}.price-options{align-items:stretch}
